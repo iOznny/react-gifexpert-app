@@ -9,6 +9,8 @@ export const GifExpertApp = () => {
             <h2>Gif Expert App</h2>
             <hr />
 
+            <button></button>
+
             <ol>
                 {
                     categories.map(category => {

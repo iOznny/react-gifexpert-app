@@ -1,15 +1,22 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
+import { AddCategory } from './components/AddCategory';
 
 export const GifExpertApp = () => {
+    
+    const [categories, setCategories] = useState(['One Punch', 'Samurai X', 'Dragon Ball']);
 
-    const categories = ['One Punch', 'Samurai X', 'Dragon Ball'];
+    // Agregar nuevo elemento a categories.
+    // const hadleAdd = () => {
+    //     //setCategories([...categories, 'Nuevo Valor']);            
+    // };
 
+    // Renderizar el componente.
     return (
         <Fragment>
             <h2>Gif Expert App</h2>
-            <hr />
+            <AddCategory setCategories={ setCategories } />
 
-            <button></button>
+            <hr />            
 
             <ol>
                 {

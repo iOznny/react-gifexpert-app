@@ -1,14 +1,10 @@
 import React, { Fragment, useState } from 'react';
 import { AddCategory } from './components/AddCategory';
+import { GifGrid } from './components/GifGrid';
 
 export const GifExpertApp = () => {
     
-    const [categories, setCategories] = useState(['One Punch', 'Samurai X', 'Dragon Ball']);
-
-    // Agregar nuevo elemento a categories.
-    // const hadleAdd = () => {
-    //     //setCategories([...categories, 'Nuevo Valor']);            
-    // };
+    const [categories, setCategories] = useState(['One Punch']);
 
     // Renderizar el componente.
     return (
@@ -20,9 +16,12 @@ export const GifExpertApp = () => {
 
             <ol>
                 {
-                    categories.map(category => {
-                        return <li key={ category }>{ category }</li>
-                    })
+                    categories.map(category => (                        
+                        <GifGrid 
+                            key={ category }
+                            category={ category }
+                        />
+                    ))
                 }
             </ol>
         </Fragment>

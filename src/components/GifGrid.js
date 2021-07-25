@@ -1,36 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { GifGridItem } from './GifGridItem';
+
+// Hooks
+import { useFetchGifs } from '../hooks/useFetchGifs'
 
 export const GifGrid = ({ category }) => {
 
-    // Images
-    const [images, setImages] = useState([]);
-
-    useEffect(() => {
-        getGifs();
-    }, []);
-
-    // Petición a API Giphy.
-    const getGifs = async () => {
-        const url = 'https://api.giphy.com/v1/gifs/search?q=tesla&limit=5&api_key=wVPinMHaw1TK9d0hmQgZ6CTLl8Q3w1jH';
-        const res = await fetch(url);
-        const { data } = await res.json();
-
-        const gifs = data.map(img => {
-            return {
-                id: img.id,
-                title: img.title,
-                url: img.images?.downsized_medium.url
-            }
-        })
-
-        console.log(gifs);
-        setImages(gifs);
-    };
-
+    const { data: images, loading } = useFetchGifs(category);
+    
     return (
-        <>
-            <h3>{ category }</h3>        
+        <>    
+            <h5>{ category }</h5>    
+            { loading && <p>Cargando...</p> }
             <div className="card-grid">
                 {
                     images.map(img => (

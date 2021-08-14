@@ -6,9 +6,15 @@ describe('Pruebas <GifGridItem />', () => {
 
     const title = 'Title';
     const url = 'https://localhost/algo.jpg';
+    const wrapper = shallow(<GifGridItem title={ title } url={ url } />);
 
     test('Show componen successful ', () => {
-        const wrapper = shallow(<GifGridItem title={ title } url={ url } />);
         expect(wrapper).toMatchSnapshot();
     });
+
+    test('Have p with text', () => {
+        const p = wrapper.find('p');
+        expect(p.text().trim()).toBe(title);
+    });
+    
 });

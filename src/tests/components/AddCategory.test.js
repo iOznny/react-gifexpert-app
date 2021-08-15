@@ -18,7 +18,4 @@ describe('Testing AddCategory', () => {
         input.simulate('change', { target: { value }  }); 
         expect(wrapper.find('p').text().trim()).toBe(value);
     });
-    
-
-
 });

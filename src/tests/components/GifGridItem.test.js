@@ -18,8 +18,17 @@ describe('Pruebas <GifGridItem />', () => {
     });
     
     test('Get image', () => {
-        const img = wrapper.find('img');        
+        const img = wrapper.find('img');   
         expect(img.prop('src')).toBe(url);
         expect(img.prop('alt')).toBe(title);
-    });  
+    });
+
+    test('Animation Fade Bounce', () => {
+        const div = wrapper.find('div');        
+        const className = div.prop('className');
+
+        expect(className.includes('animate__bounce')).toBe(true);
+    });
+    
+
 });

@@ -9,6 +9,7 @@ export const AddCategory = ({ setCategories }) => {
     // Cambiar valor del input
     const handleInputChange = (e) => {        
         setInputValue(e.target.value);
+        console.log('handleInputChange llamado');
     };
 
     // Prevenir posteo de form y agregar nuevo valor al arreglo
@@ -23,6 +24,7 @@ export const AddCategory = ({ setCategories }) => {
 
     return (  
         <form onSubmit={ handleSubmit }>
+            <p>{ inputValue }</p>
             <input 
                 type="text"
                 value={ inputValue } 

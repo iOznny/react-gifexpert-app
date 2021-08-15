@@ -17,4 +17,9 @@ describe('Pruebas <GifGridItem />', () => {
         expect(p.text().trim()).toBe(title);
     });
     
+    test('Get image', () => {
+        const img = wrapper.find('img');        
+        expect(img.prop('src')).toBe(url);
+        expect(img.prop('alt')).toBe(title);
+    });  
 });

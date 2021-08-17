@@ -29,6 +29,24 @@ describe('Testing AddCategory', () => {
     test('Should not pass the information with submit', () => {
         wrapper.find('form').simulate('submit', { preventDefault(){} });
         expect(setCategories).not.toHaveBeenCalled();
-    });  
+    });
+
+    test('Set Categories Clear text box', () => {
+
+        const value = 'Hola Mundo';
+
+        // Simular el inputchange
+        wrapper.find('input').simulate('change', { target: { value } });
+
+        // Simular el submit
+        wrapper.find('form').simulate('submit', { preventDefault(){} });
+
+        // setCategories debe de haber llamado
+        expect(setCategories).toHaveBeenCalled();
+
+        // el valor del input debe estar ''
+        expect(wrapper.find('input').prop('value')).toBe('');
+    });
+    
 
 });

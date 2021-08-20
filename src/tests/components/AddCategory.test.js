@@ -42,11 +42,11 @@ describe('Testing AddCategory', () => {
         wrapper.find('form').simulate('submit', { preventDefault(){} });
 
         // setCategories debe de haber llamado
-        expect(setCategories).toHaveBeenCalled();
+        expect(setCategories).toHaveBeenCalled();        
+        expect(setCategories).toHaveBeenCalledTimes(1);
+        expect(setCategories).toHaveBeenCalledWith(expect.any(Function));
 
         // el valor del input debe estar ''
         expect(wrapper.find('input').prop('value')).toBe('');
     });
-    
-
 });

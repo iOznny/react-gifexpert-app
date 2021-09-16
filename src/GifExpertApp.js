@@ -4,6 +4,7 @@ import { GifGrid } from './components/GifGrid';
 
 export const GifExpertApp = ({ defaultCategories = [] }) => {
     
+    // Initial object Categories
     const [categories, setCategories] = useState(defaultCategories);
 
     // Renderizar el componente.
@@ -17,10 +18,7 @@ export const GifExpertApp = ({ defaultCategories = [] }) => {
             <ol>
                 {
                     categories.map(category => (                        
-                        <GifGrid 
-                            key={ category }
-                            category={ category }
-                        />
+                        <GifGrid key={ category } category={ category } />
                     ))
                 }
             </ol>

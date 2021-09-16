@@ -29,6 +29,5 @@ describe('Pruebas <GifGridItem />', () => {
 
         expect(className.includes('animate__bounce')).toBe(true);
     });
-    
 
 });

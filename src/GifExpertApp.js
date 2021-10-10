@@ -2,10 +2,9 @@ import React, { Fragment, useState } from 'react';
 import { AddCategory } from './components/AddCategory';
 import { GifGrid } from './components/GifGrid';
 
-export const GifExpertApp = ({ defaultCategories = [] }) => {
-    
+export const GifExpertApp = ({ defaultCategories = [] }) => {    
     // Initial object Categories
-    const [categories, setCategories] = useState(defaultCategories);
+    const [ categories, setCategories ] = useState(defaultCategories);
 
     // Renderizar el componente.
     return (

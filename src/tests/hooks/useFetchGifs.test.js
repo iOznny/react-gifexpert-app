@@ -19,5 +19,4 @@ describe('Testing in useFetchGifs Hook', () => {
         expect(data.length).toBe(5);
         expect(loading).toBe(false);
     });
-    
 });
